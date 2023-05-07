@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0">Number</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding foo.Num}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Num, UpdateSourceTrigger=PropertyChanged}"/>
         <Button Grid.Row="1" Grid.Column="0" Click="buttonClick">Randomise</Button>
 
     </Grid>
