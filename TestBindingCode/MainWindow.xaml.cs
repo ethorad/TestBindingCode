@@ -23,7 +23,7 @@ namespace TestBindingCode
         private void buttonClick(object sender, RoutedEventArgs e)
         {
             foo.Num = rng.Next(0, 100);
-            MessageBox.Show("Num is " + foo.Num);
+            //MessageBox.Show("Num is " + foo.Num);
         }
     }
 }
