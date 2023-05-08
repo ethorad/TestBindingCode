@@ -7,19 +7,35 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="200  " Width="400">
     <Grid>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0">Number</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Num}"/>
-        <Button Grid.Row="1" Grid.Column="0" Click="buttonClick">Randomise</Button>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Row="0" Grid.Column="0">Name</Label>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Name}"/>
+
+            <Label Grid.Row="1" Grid.Column="0">Age</Label>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Age, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <ListBox Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding FoodList}" SelectedItem="{Binding SelectedFood}" />
+        </Grid>
 
     </Grid>
 </Window>
